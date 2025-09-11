@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://7wut3ipg4vbq"]
 
 [ext_resource type="Texture2D" uid="uid://cxvf1g7ivegcy" path="res://assets/_animations/explosionSquare.png" id="1_0j0ah"]
-[ext_resource type="Script" path="res://scripts/explosions/explosionSquare.gd" id="2_mm74e"]
+[ext_resource type="Script" path="res://scripts/_animations/explosionSquare.gd" id="2_ka2ad"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ui3vu"]
 atlas = ExtResource("1_0j0ah")
@@ -65,4 +65,4 @@ texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_8djwg")
 animation = &"explode"
-script = ExtResource("2_mm74e")
+script = ExtResource("2_ka2ad")

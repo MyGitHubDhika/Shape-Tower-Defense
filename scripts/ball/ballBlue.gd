@@ -7,4 +7,4 @@ func _ready():
 	health = 100.0
 	price = 100.0
 	
-	deduct_money()
+	deduct_coins()

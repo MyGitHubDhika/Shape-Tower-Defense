@@ -33,7 +33,7 @@ func take_damage(enemy_health):
 		queue_free()
 
 func explode():
-	var explosion = preload("res://scenes/animations/explosionBall.tscn").instantiate()
+	var explosion = preload("res://scenes/_animations/explosionBall.tscn").instantiate()
 	
 	explosion.global_position = global_position
 	explosion.scale = explosion.scale * (scale / 0.7)
@@ -43,8 +43,8 @@ func explode():
 
 var price = 100
 
-func deduct_money():
-	var level = get_tree().get_first_node_in_group("level")  # Find the running level
+func deduct_coins():
+	var level = get_tree().get_first_node_in_group("level")
 	if level and level.coins >= price:
 		level.coins -= price
 	else:

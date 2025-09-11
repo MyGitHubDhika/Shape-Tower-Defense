@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2244hxyt7fhl"]
+[gd_scene load_steps=15 format=3 uid="uid://b2244hxyt7fhl"]
 
 [ext_resource type="Texture2D" uid="uid://dnnqk3ya8mdb2" path="res://assets/sky.png" id="1_6rwhg"]
 [ext_resource type="Script" path="res://scripts/_level1.gd" id="1_wrtc6"]
 [ext_resource type="Texture2D" uid="uid://c3aal6wk7nprg" path="res://assets/_tilesets/tileset.png" id="2_pdssn"]
 [ext_resource type="Texture2D" uid="uid://b3qxxj468tj71" path="res://assets/two-coins.png" id="4_c4g1m"]
+[ext_resource type="Texture2D" uid="uid://dlr0ai7hep066" path="res://assets/heart-plus.svg" id="5_fkbe1"]
+[ext_resource type="Texture2D" uid="uid://br1rddrwu6qlb" path="res://assets/_buttons/button_blueBall.png" id="6_q2jcl"]
+[ext_resource type="Texture2D" uid="uid://beepxg72p2fq4" path="res://assets/_buttons/button_yellowBall.png" id="7_veoqk"]
+[ext_resource type="Texture2D" uid="uid://bytbc2wabgxod" path="res://assets/_buttons/button_natureBall.png" id="8_7y72e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vedoy"]
 texture = ExtResource("2_pdssn")
@@ -400,6 +404,27 @@ cache/0/30/0/kerning_overrides/40/0 = Vector2(0, 0)
 cache/0/30/0/kerning_overrides/35/0 = Vector2(0, 0)
 cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_br5cq"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+shadow_size = 3
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bfyw"]
+bg_color = Color(0.223103, 0.223103, 0.223103, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
 [node name="Node2D" type="Node"]
 script = ExtResource("1_wrtc6")
 
@@ -421,10 +446,10 @@ layer_0/tile_data = PackedInt32Array(720896, 1441793, 5, 786432, 1441793, 5, 851
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -134.5
+offset_left = -134.0
 offset_top = 28.0
-offset_right = 134.5
-offset_bottom = 104.0
+offset_right = 135.0
+offset_bottom = 87.0
 grow_horizontal = 2
 size_flags_horizontal = 6
 size_flags_vertical = 2
@@ -435,10 +460,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 9.0
-offset_top = -34.5
-offset_right = 78.0
-offset_bottom = 34.5
+offset_left = 11.0
+offset_top = -28.5
+offset_right = 68.0
+offset_bottom = 28.5
 grow_vertical = 2
 texture = ExtResource("4_c4g1m")
 expand_mode = 1
@@ -464,3 +489,141 @@ theme_override_font_sizes/font_size = 30
 text = "Coins: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PanelBaseHealth" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 236.0
+offset_top = 28.0
+offset_right = 533.0
+offset_bottom = 87.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_br5cq")
+
+[node name="PanelBaseHealth" type="TextureRect" parent="PanelBaseHealth"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -20.5
+offset_right = 54.0
+offset_bottom = 20.5
+grow_vertical = 2
+texture = ExtResource("5_fkbe1")
+expand_mode = 1
+
+[node name="LabelBaseHealth" type="Label" parent="PanelBaseHealth"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -23.5
+offset_right = 133.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = SubResource("FontFile_k87fr")
+theme_override_font_sizes/font_size = 30
+text = "Base Health: 500"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelEquipButton" type="Panel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -268.0
+offset_top = -98.0
+offset_right = 268.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1bfyw")
+
+[node name="Button1" type="Button" parent="PanelEquipButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -38.5
+offset_right = 82.0
+offset_bottom = 38.5
+grow_vertical = 2
+icon = ExtResource("6_q2jcl")
+expand_icon = true
+
+[node name="Button2" type="Button" parent="PanelEquipButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 94.0
+offset_top = -38.5
+offset_right = 171.0
+offset_bottom = 38.5
+grow_vertical = 2
+icon = ExtResource("7_veoqk")
+expand_icon = true
+
+[node name="Button3" type="Button" parent="PanelEquipButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 184.0
+offset_top = -38.5
+offset_right = 261.0
+offset_bottom = 38.5
+grow_vertical = 2
+icon = ExtResource("8_7y72e")
+expand_icon = true
+
+[node name="Button4" type="Button" parent="PanelEquipButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 274.0
+offset_top = -38.5
+offset_right = 351.0
+offset_bottom = 38.5
+grow_vertical = 2
+
+[node name="Button5" type="Button" parent="PanelEquipButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 364.0
+offset_top = -38.5
+offset_right = 441.0
+offset_bottom = 38.5
+grow_vertical = 2
+
+[node name="Button6" type="Button" parent="PanelEquipButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 454.0
+offset_top = -38.5
+offset_right = 531.0
+offset_bottom = 38.5
+grow_vertical = 2
+
+[connection signal="pressed" from="PanelEquipButton/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="PanelEquipButton/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="PanelEquipButton/Button3" to="." method="_on_button_3_pressed"]

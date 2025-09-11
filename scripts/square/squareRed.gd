@@ -7,3 +7,4 @@ func _ready():
 	
 	speed = ball_blue_speed * (75.0 / 50.0)
 	health = 75.0
+	coins_drop = 50

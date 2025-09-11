@@ -5,8 +5,8 @@ func _ready():
 	
 	var ball_blue_speed = preload("res://scenes/ball/ballBlue.tscn").instantiate().speed
 	
-	speed = ball_blue_speed * (100.0 / 50.0)
-	health = 50.0
-	price = 60.0
+	speed = ball_blue_speed * (35.0 / 50.0)
+	health = 200.0
+	price = 180.0
 	
 	deduct_coins()
