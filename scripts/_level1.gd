@@ -10,7 +10,11 @@ const square_rock = preload("res://scenes/square/squareRock.tscn")
 
 var balls = [ball_blue, ball_yellow, ball_nature]
 
+@export var time_scale = 1.0
+
 func _ready():
+	Engine.time_scale = time_scale
+	
 	add_to_group("level")
 	
 	spawn_square(square_red, 0.0, 2.0, 15)
@@ -19,12 +23,19 @@ func _ready():
 	spawn_square(square_rock, 6.0)
 	spawn_square(square_rock, 22.0)
 	
-	display_coins()
+	add_coins()
 
 @onready var label_coins = %LabelCoins
 @onready var label_base_health = %LabelBaseHealth
+@onready var label_enemy_health = %LabelEnemyHealth
+
+@onready var panel_you_win = %PanelYouWin
+
+@onready var screen_width = get_viewport().size.x
+@onready var screen_height = get_viewport().size.y
 
 var base_health = 500
+var enemy_health = 500
 func _process(_delta):
 	if Input.is_action_just_pressed("spawn_ball_1"):
 		spawn_ball(balls[0])
@@ -37,9 +48,15 @@ func _process(_delta):
 		
 	label_coins.text = "Coins: " + str(coins)
 	label_base_health.text = "Base Health: " + str(base_health)
+	label_enemy_health.text = "Enemy Health: " + str(enemy_health)
 	
 	if base_health <= 0:
 		label_base_health.text = "Base Health: 0"
+		Engine.time_scale = 0.0
+	
+	if enemy_health <= 0:
+		label_enemy_health.text = "Enemy Health: 0"
+		panel_you_win.position = Vector2((screen_width / 2) - (panel_you_win.size.x / 2), (screen_height / 2) - (panel_you_win.size.y / 2))
 		Engine.time_scale = 0.0
 		
 func spawn_ball(unit_scene) -> void:
@@ -58,7 +75,7 @@ func spawn_square(square_scene, start_delay = 0.0, delay = 0.0, max_spawn = 1) -
 		await get_tree().create_timer(delay).timeout
 		
 var coins = 0
-func display_coins():
+func add_coins():
 	while true:
 		await get_tree().create_timer(0.05).timeout
 		coins += 2

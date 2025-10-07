@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b2244hxyt7fhl"]
+[gd_scene load_steps=18 format=3 uid="uid://b2244hxyt7fhl"]
 
 [ext_resource type="Texture2D" uid="uid://dnnqk3ya8mdb2" path="res://assets/sky.png" id="1_6rwhg"]
 [ext_resource type="Script" path="res://scripts/_level1.gd" id="1_wrtc6"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://br1rddrwu6qlb" path="res://assets/_buttons/button_blueBall.png" id="6_q2jcl"]
 [ext_resource type="Texture2D" uid="uid://beepxg72p2fq4" path="res://assets/_buttons/button_yellowBall.png" id="7_veoqk"]
 [ext_resource type="Texture2D" uid="uid://bytbc2wabgxod" path="res://assets/_buttons/button_natureBall.png" id="8_7y72e"]
+[ext_resource type="Texture2D" uid="uid://besqnjxb74g2r" path="res://assets/crown1.png" id="9_tbxd6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vedoy"]
 texture = ExtResource("2_pdssn")
@@ -363,6 +364,10 @@ cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/35/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/29/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/27/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/26/0 = Vector2(0, 0)
 cache/0/20/0/ascent = 0.0
 cache/0/20/0/descent = 0.0
 cache/0/20/0/underline_position = 0.0
@@ -373,6 +378,10 @@ cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
 cache/0/20/0/kerning_overrides/40/0 = Vector2(0, 0)
 cache/0/20/0/kerning_overrides/35/0 = Vector2(0, 0)
 cache/0/20/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/29/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/27/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/26/0 = Vector2(0, 0)
 cache/0/40/0/ascent = 0.0
 cache/0/40/0/descent = 0.0
 cache/0/40/0/underline_position = 0.0
@@ -383,6 +392,10 @@ cache/0/40/0/kerning_overrides/20/0 = Vector2(0, 0)
 cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
 cache/0/40/0/kerning_overrides/35/0 = Vector2(0, 0)
 cache/0/40/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/29/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/27/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/26/0 = Vector2(0, 0)
 cache/0/35/0/ascent = 0.0
 cache/0/35/0/descent = 0.0
 cache/0/35/0/underline_position = 0.0
@@ -393,6 +406,10 @@ cache/0/35/0/kerning_overrides/20/0 = Vector2(0, 0)
 cache/0/35/0/kerning_overrides/40/0 = Vector2(0, 0)
 cache/0/35/0/kerning_overrides/35/0 = Vector2(0, 0)
 cache/0/35/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/35/0/kerning_overrides/29/0 = Vector2(0, 0)
+cache/0/35/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/35/0/kerning_overrides/27/0 = Vector2(0, 0)
+cache/0/35/0/kerning_overrides/26/0 = Vector2(0, 0)
 cache/0/30/0/ascent = 0.0
 cache/0/30/0/descent = 0.0
 cache/0/30/0/underline_position = 0.0
@@ -403,9 +420,83 @@ cache/0/30/0/kerning_overrides/20/0 = Vector2(0, 0)
 cache/0/30/0/kerning_overrides/40/0 = Vector2(0, 0)
 cache/0/30/0/kerning_overrides/35/0 = Vector2(0, 0)
 cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/29/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/27/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/26/0 = Vector2(0, 0)
+cache/0/29/0/ascent = 0.0
+cache/0/29/0/descent = 0.0
+cache/0/29/0/underline_position = 0.0
+cache/0/29/0/underline_thickness = 0.0
+cache/0/29/0/scale = 1.0
+cache/0/29/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/29/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/29/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/29/0/kerning_overrides/35/0 = Vector2(0, 0)
+cache/0/29/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/29/0/kerning_overrides/29/0 = Vector2(0, 0)
+cache/0/29/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/29/0/kerning_overrides/27/0 = Vector2(0, 0)
+cache/0/29/0/kerning_overrides/26/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/35/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/29/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/27/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/26/0 = Vector2(0, 0)
+cache/0/27/0/ascent = 0.0
+cache/0/27/0/descent = 0.0
+cache/0/27/0/underline_position = 0.0
+cache/0/27/0/underline_thickness = 0.0
+cache/0/27/0/scale = 1.0
+cache/0/27/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/27/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/27/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/27/0/kerning_overrides/35/0 = Vector2(0, 0)
+cache/0/27/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/27/0/kerning_overrides/29/0 = Vector2(0, 0)
+cache/0/27/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/27/0/kerning_overrides/27/0 = Vector2(0, 0)
+cache/0/27/0/kerning_overrides/26/0 = Vector2(0, 0)
+cache/0/26/0/ascent = 0.0
+cache/0/26/0/descent = 0.0
+cache/0/26/0/underline_position = 0.0
+cache/0/26/0/underline_thickness = 0.0
+cache/0/26/0/scale = 1.0
+cache/0/26/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/26/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/26/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/26/0/kerning_overrides/35/0 = Vector2(0, 0)
+cache/0/26/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/26/0/kerning_overrides/29/0 = Vector2(0, 0)
+cache/0/26/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/26/0/kerning_overrides/27/0 = Vector2(0, 0)
+cache/0/26/0/kerning_overrides/26/0 = Vector2(0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_br5cq"]
 bg_color = Color(1, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+shadow_size = 3
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1xqu"]
+bg_color = Color(0.337525, 0.05939, 0.456465, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -424,6 +515,8 @@ corner_radius_top_left = 7
 corner_radius_top_right = 7
 corner_radius_bottom_right = 7
 corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_obqe6"]
 
 [node name="Node2D" type="Node"]
 script = ExtResource("1_wrtc6")
@@ -503,7 +596,7 @@ size_flags_horizontal = 6
 size_flags_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_br5cq")
 
-[node name="PanelBaseHealth" type="TextureRect" parent="PanelBaseHealth"]
+[node name="PictureBaseHealth" type="TextureRect" parent="PanelBaseHealth"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -535,6 +628,54 @@ theme_override_constants/outline_size = 3
 theme_override_fonts/font = SubResource("FontFile_k87fr")
 theme_override_font_sizes/font_size = 30
 text = "Base Health: 500"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelEnemyHealth" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -533.0
+offset_top = 28.0
+offset_right = -236.0
+offset_bottom = 87.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g1xqu")
+
+[node name="PictureEnemyHealth" type="TextureRect" parent="PanelEnemyHealth"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -20.5
+offset_right = 54.0
+offset_bottom = 20.5
+grow_vertical = 2
+texture = ExtResource("5_fkbe1")
+expand_mode = 1
+
+[node name="LabelEnemyHealth" type="Label" parent="PanelEnemyHealth"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -23.5
+offset_right = 133.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = SubResource("FontFile_k87fr")
+theme_override_font_sizes/font_size = 26
+text = "Enemy Health: 500"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -623,6 +764,53 @@ offset_top = -38.5
 offset_right = 531.0
 offset_bottom = 38.5
 grow_vertical = 2
+
+[node name="PanelYouWin" type="Panel" parent="."]
+unique_name_in_owner = true
+offset_left = 1333.0
+offset_top = 187.0
+offset_right = 1990.0
+offset_bottom = 482.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_obqe6")
+
+[node name="LabelYouWin" type="Label" parent="PanelYouWin"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.5
+offset_top = -82.5
+offset_right = 286.5
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 8
+theme_override_font_sizes/font_size = 120
+text = "You Win!!!"
+
+[node name="PictureYouWin" type="TextureRect" parent="PanelYouWin"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = -117.5
+offset_right = 57.5
+offset_bottom = -17.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_tbxd6")
+expand_mode = 1
 
 [connection signal="pressed" from="PanelEquipButton/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="PanelEquipButton/Button2" to="." method="_on_button_2_pressed"]

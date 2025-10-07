@@ -12,6 +12,14 @@ func _physics_process(delta):
 	else:
 		velocity.y = 0
 		velocity.x = -speed
+		
+	if is_on_wall():
+		var level = get_tree().get_first_node_in_group("level")
+		
+		if level:
+			level.enemy_health -= health
+			queue_free()
+			
 	move_and_slide()
 
 func _on_area_2d_body_entered(body):
