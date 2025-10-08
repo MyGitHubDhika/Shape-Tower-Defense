@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b2244hxyt7fhl"]
+[gd_scene load_steps=19 format=3 uid="uid://b2244hxyt7fhl"]
 
 [ext_resource type="Texture2D" uid="uid://dnnqk3ya8mdb2" path="res://assets/sky.png" id="1_6rwhg"]
 [ext_resource type="Script" path="res://scripts/_level1.gd" id="1_wrtc6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://beepxg72p2fq4" path="res://assets/_buttons/button_yellowBall.png" id="7_veoqk"]
 [ext_resource type="Texture2D" uid="uid://bytbc2wabgxod" path="res://assets/_buttons/button_natureBall.png" id="8_7y72e"]
 [ext_resource type="Texture2D" uid="uid://besqnjxb74g2r" path="res://assets/crown1.png" id="9_tbxd6"]
+[ext_resource type="Texture2D" uid="uid://cr45b14i7hpgb" path="res://assets/skull1.png" id="10_w7dyb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vedoy"]
 texture = ExtResource("2_pdssn")
@@ -520,6 +521,7 @@ corner_radius_bottom_left = 7
 
 [node name="Node2D" type="Node"]
 script = ExtResource("1_wrtc6")
+time_scale = 3.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1152.0
@@ -767,10 +769,10 @@ grow_vertical = 2
 
 [node name="PanelYouWin" type="Panel" parent="."]
 unique_name_in_owner = true
-offset_left = 1333.0
-offset_top = 187.0
-offset_right = 1990.0
-offset_bottom = 482.0
+offset_left = 1329.0
+offset_top = 55.0
+offset_right = 1986.0
+offset_bottom = 350.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_obqe6")
 
 [node name="LabelYouWin" type="Label" parent="PanelYouWin"]
@@ -810,6 +812,53 @@ offset_bottom = -17.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_tbxd6")
+expand_mode = 1
+
+[node name="PanelYouLose" type="Panel" parent="."]
+unique_name_in_owner = true
+offset_left = 1339.0
+offset_top = 369.0
+offset_right = 1996.0
+offset_bottom = 664.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_obqe6")
+
+[node name="LabelYouLose" type="Label" parent="PanelYouLose"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.5
+offset_top = -82.5
+offset_right = 286.5
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.408008, 0.00190097, 0.693421, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 8
+theme_override_font_sizes/font_size = 120
+text = "You Lose!!!"
+
+[node name="TextureRect" type="TextureRect" parent="PanelYouLose"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -98.5
+offset_right = 71.5
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_w7dyb")
 expand_mode = 1
 
 [connection signal="pressed" from="PanelEquipButton/Button1" to="." method="_on_button_1_pressed"]
