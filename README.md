@@ -3,4 +3,5 @@ This is a simple, BattleCats inspired game about Shape Tower Defense. You are co
 This games is primarily for learning about Godot since it was my first game on this engine.
 
 Current progress: 
-- Coins system (75%), the enemies still haven't dropped any coins.
+- Winning system: DONE (100%)
+- Losing system: NOT DONE (0%)
