@@ -1,0 +1,138 @@
+[gd_scene load_steps=10 format=3 uid="uid://mpswj06v8fix"]
+
+[ext_resource type="Texture2D" uid="uid://dnnqk3ya8mdb2" path="res://assets/sky.png" id="1_a3053"]
+[ext_resource type="Script" path="res://scenes/start_menu.gd" id="1_upngi"]
+[ext_resource type="Texture2D" uid="uid://rnl6cmitu7yw" path="res://assets/game-logo1.png" id="2_c37k0"]
+[ext_resource type="FontFile" uid="uid://td4u3p8qk0fc" path="res://assets/_fonts/Oswald-VariableFont_wght.ttf" id="2_u6m1a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_it3a5"]
+texture = ExtResource("1_a3053")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u2x0k"]
+bg_color = Color(0.25407, 0.770725, 7.70092e-07, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1.14311e-06, 0.385644, 0.0663111, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwih1"]
+bg_color = Color(0.202503, 0.632958, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1.14311e-06, 0.385644, 0.0663111, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua62t"]
+bg_color = Color(8.66354e-06, 0.652908, 0.87978, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(5.77569e-07, 0.399654, 0.551375, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8at5x"]
+bg_color = Color(0.481789, 0.48179, 0.481789, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.325441, 0.325441, 0.325441, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_upngi")
+
+[node name="Panel" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_it3a5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -28.0
+offset_right = 225.0
+offset_bottom = 181.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="ButtonStart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_u6m1a")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_u2x0k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u2x0k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xwih1")
+text = "START"
+
+[node name="ButtonLevels" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+theme_override_fonts/font = ExtResource("2_u6m1a")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ua62t")
+text = "LEVELS"
+
+[node name="ButtonSettings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+theme_override_fonts/font = ExtResource("2_u6m1a")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_8at5x")
+text = "SETTINGS
+"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -496.0
+offset_top = -168.0
+offset_right = 496.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_c37k0")
+stretch_mode = 4
+
+[connection signal="pressed" from="VBoxContainer/ButtonStart" to="." method="_on_start_pressed"]

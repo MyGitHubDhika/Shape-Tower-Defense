@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3qxxj468tj71"
-path="res://.godot/imported/two-coins.png-6cec0a979928156bf955dd133342fe51.ctex"
+uid="uid://dlr0ai7hep066"
+path="res://.godot/imported/heart-plus.svg-491b7c0254fa45819f4007c060f1a96e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/two-coins.png"
-dest_files=["res://.godot/imported/two-coins.png-6cec0a979928156bf955dd133342fe51.ctex"]
+source_file="res://assets/_icons/heart-plus.svg"
+dest_files=["res://.godot/imported/heart-plus.svg-491b7c0254fa45819f4007c060f1a96e.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

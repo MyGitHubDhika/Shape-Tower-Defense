@@ -10,7 +10,7 @@ const square_thunder = preload("res://scenes/square/squareThunder.tscn")
 const square_rock = preload("res://scenes/square/squareRock.tscn")
 
 # to make it easier to organize and to spawn a ball
-var balls = [ball_blue, ball_yellow, ball_nature]
+var balls = []
 
 var activated = true # if the game is allowed to run
 @export var time_scale = 1.0 # time multiplier
@@ -19,6 +19,12 @@ func _ready():
 	Engine.time_scale = time_scale # set the time multiplier
 	
 	add_to_group("level")
+	
+	balls.resize(6)
+	
+	balls[0] = ball_blue
+	balls[1] = ball_yellow
+	balls[2] = ball_nature
 	
 	# spawn the squares
 	spawn_square(square_red, 0.0, 2.0, 15)
@@ -43,7 +49,7 @@ func _ready():
 @onready var screen_height = get_viewport().size.y
 
 @export var base_health = 500
-@export var enemy_health = 500
+@export var enemy_base_health = 500
 func _process(_delta):
 	
 	# Keybinds to spawn a ball
@@ -57,9 +63,18 @@ func _process(_delta):
 		if Input.is_action_just_pressed("spawn_ball_3"):
 			spawn_ball(balls[2])
 		
+		if Input.is_action_just_pressed("spawn_ball_4"):
+			spawn_ball(balls[3])
+			
+		if Input.is_action_just_pressed("spawn_ball_5"):
+			spawn_ball(balls[4])
+			
+		if Input.is_action_just_pressed("spawn_ball_6"):
+			spawn_ball(balls[5])
+		
 	label_coins.text = "Coins: " + str(coins) # updates coins value
 	label_base_health.text = "Base Health: " + str(base_health) # updates base health
-	label_enemy_health.text = "Enemy Health: " + str(enemy_health) # updates enemy health
+	label_enemy_health.text = "Enemy Health: " + str(enemy_base_health) # updates enemy health
 	
 	if base_health <= 0: # if the base is destroyed (losing)
 		label_base_health.text = "Base Health: 0"
@@ -71,7 +86,7 @@ func _process(_delta):
 		
 		activated = false
 	
-	if enemy_health <= 0: # if the enemy's base is destroyed (winning)
+	if enemy_base_health <= 0: # if the enemy's base is destroyed (winning)
 		label_enemy_health.text = "Enemy Health: 0"
 		
 		# pop-ups PanelYouWin to the center of the screen
@@ -83,9 +98,10 @@ func _process(_delta):
 
 # spawn a ball
 func spawn_ball(unit_scene) -> void:
-	var ball = unit_scene.instantiate()
-	add_child(ball)
-	ball.position = Vector2(1040.0, 330.0)
+	if unit_scene != null:
+		var ball = unit_scene.instantiate()
+		add_child(ball)
+		ball.position = Vector2(1040.0, 330.0)
 
 # spawn a group of squares based on interval and amount
 func spawn_square(square_scene, start_delay = 0.0, delay = 0.0, max_spawn = 1) -> void:
@@ -108,14 +124,22 @@ func add_coins(): # updates coins value by a small amount
 		await get_tree().create_timer(0.05).timeout
 		coins += 2
 
-func _on_button_1_pressed(): # the 1st button on PanelEquipButton to spawn a ball
+# 6 button GUI to spawn a ball
+func _on_spawn_1_pressed():
 	if activated:
 		spawn_ball(balls[0])
-
-func _on_button_2_pressed(): # the 2nd button on PanelEquipButton to spawn a ball
+func _on_spawn_2_pressed():
 	if activated:
 		spawn_ball(balls[1])
-
-func _on_button_3_pressed(): # the 3rd button on PanelEquipButton to spawn a ball
+func _on_spawn_3_pressed():
 	if activated:
 		spawn_ball(balls[2])
+func _on_spawn_4_pressed():
+	if activated:
+		spawn_ball(balls[3])
+func _on_spawn_5_pressed():
+	if activated:
+		spawn_ball(balls[3])
+func _on_spawn_6_pressed():
+	if activated:
+		spawn_ball(balls[3])

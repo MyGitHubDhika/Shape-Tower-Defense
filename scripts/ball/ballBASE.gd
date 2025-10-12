@@ -17,7 +17,7 @@ func _physics_process(delta):
 		var level = get_tree().get_first_node_in_group("level")
 		
 		if level:
-			level.enemy_health -= health
+			level.enemy_base_health -= health
 			queue_free()
 			
 	move_and_slide()

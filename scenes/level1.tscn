@@ -3,13 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://dnnqk3ya8mdb2" path="res://assets/sky.png" id="1_6rwhg"]
 [ext_resource type="Script" path="res://scripts/_level1.gd" id="1_wrtc6"]
 [ext_resource type="Texture2D" uid="uid://c3aal6wk7nprg" path="res://assets/_tilesets/tileset.png" id="2_pdssn"]
-[ext_resource type="Texture2D" uid="uid://b3qxxj468tj71" path="res://assets/two-coins.png" id="4_c4g1m"]
-[ext_resource type="Texture2D" uid="uid://dlr0ai7hep066" path="res://assets/heart-plus.svg" id="5_fkbe1"]
+[ext_resource type="Texture2D" uid="uid://b3qxxj468tj71" path="res://assets/_icons/two-coins.png" id="4_c4g1m"]
+[ext_resource type="Texture2D" uid="uid://dlr0ai7hep066" path="res://assets/_icons/heart-plus.svg" id="5_fkbe1"]
 [ext_resource type="Texture2D" uid="uid://br1rddrwu6qlb" path="res://assets/_buttons/button_blueBall.png" id="6_q2jcl"]
 [ext_resource type="Texture2D" uid="uid://beepxg72p2fq4" path="res://assets/_buttons/button_yellowBall.png" id="7_veoqk"]
 [ext_resource type="Texture2D" uid="uid://bytbc2wabgxod" path="res://assets/_buttons/button_natureBall.png" id="8_7y72e"]
-[ext_resource type="Texture2D" uid="uid://besqnjxb74g2r" path="res://assets/crown1.png" id="9_tbxd6"]
-[ext_resource type="Texture2D" uid="uid://cr45b14i7hpgb" path="res://assets/skull1.png" id="10_w7dyb"]
+[ext_resource type="Texture2D" uid="uid://besqnjxb74g2r" path="res://assets/_icons/crown1.png" id="9_tbxd6"]
+[ext_resource type="Texture2D" uid="uid://cr45b14i7hpgb" path="res://assets/_icons/skull1.png" id="10_w7dyb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vedoy"]
 texture = ExtResource("2_pdssn")
@@ -521,7 +521,6 @@ corner_radius_bottom_left = 7
 
 [node name="Node2D" type="Node"]
 script = ExtResource("1_wrtc6")
-time_scale = 3.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1152.0
@@ -696,6 +695,7 @@ grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_1bfyw")
 
 [node name="Button1" type="Button" parent="PanelEquipButton"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -861,6 +861,9 @@ grow_vertical = 2
 texture = ExtResource("10_w7dyb")
 expand_mode = 1
 
-[connection signal="pressed" from="PanelEquipButton/Button1" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="PanelEquipButton/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="PanelEquipButton/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="PanelEquipButton/Button1" to="." method="_on_spawn_1_pressed"]
+[connection signal="pressed" from="PanelEquipButton/Button2" to="." method="_on_spawn_2_pressed"]
+[connection signal="pressed" from="PanelEquipButton/Button3" to="." method="_on_spawn_3_pressed"]
+[connection signal="pressed" from="PanelEquipButton/Button4" to="." method="_on_spawn_4_pressed"]
+[connection signal="pressed" from="PanelEquipButton/Button5" to="." method="_on_spawn_5_pressed"]
+[connection signal="pressed" from="PanelEquipButton/Button6" to="." method="_on_spawn_6_pressed"]

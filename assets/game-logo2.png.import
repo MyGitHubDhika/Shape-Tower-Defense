@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlr0ai7hep066"
-path="res://.godot/imported/heart-plus.svg-7b7965033dd9ea95be396e6bf545fa7c.ctex"
+uid="uid://b7mw6etddydou"
+path="res://.godot/imported/game-logo2.png-3beda28c369227f5459b2c2670edd510.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/heart-plus.svg"
-dest_files=["res://.godot/imported/heart-plus.svg-7b7965033dd9ea95be396e6bf545fa7c.ctex"]
+source_file="res://assets/game-logo2.png"
+dest_files=["res://.godot/imported/game-logo2.png-3beda28c369227f5459b2c2670edd510.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

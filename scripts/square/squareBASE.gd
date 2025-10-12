@@ -7,8 +7,6 @@ var price = 100.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-var base_health = 500
-
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
