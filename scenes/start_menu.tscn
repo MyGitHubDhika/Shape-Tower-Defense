@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://mpswj06v8fix"]
+[gd_scene load_steps=12 format=3 uid="uid://mpswj06v8fix"]
 
 [ext_resource type="Texture2D" uid="uid://dnnqk3ya8mdb2" path="res://assets/sky.png" id="1_a3053"]
-[ext_resource type="Script" path="res://scenes/start_menu.gd" id="1_upngi"]
+[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_upngi"]
 [ext_resource type="Texture2D" uid="uid://rnl6cmitu7yw" path="res://assets/game-logo1.png" id="2_c37k0"]
 [ext_resource type="FontFile" uid="uid://td4u3p8qk0fc" path="res://assets/_fonts/Oswald-VariableFont_wght.ttf" id="2_u6m1a"]
 
@@ -38,7 +38,19 @@ border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(5.77569e-07, 0.399654, 0.551375, 1)
+border_color = Color(5.29438e-07, 0.331324, 0.460242, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvjvp"]
+bg_color = Color(6.16074e-06, 0.537854, 0.727854, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(5.29438e-07, 0.331324, 0.460242, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -50,7 +62,19 @@ border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(0.325441, 0.325441, 0.325441, 1)
+border_color = Color(0.273873, 0.273873, 0.273873, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tr7ux"]
+bg_color = Color(0.396888, 0.39689, 0.396888, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.273873, 0.273873, 0.273873, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -65,7 +89,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_upngi")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -107,6 +131,8 @@ size_flags_stretch_ratio = 0.6
 theme_override_fonts/font = ExtResource("2_u6m1a")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_ua62t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ua62t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tvjvp")
 text = "LEVELS"
 
 [node name="ButtonSettings" type="Button" parent="VBoxContainer"]
@@ -116,10 +142,12 @@ size_flags_stretch_ratio = 0.6
 theme_override_fonts/font = ExtResource("2_u6m1a")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_8at5x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8at5x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tr7ux")
 text = "SETTINGS
 "
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ShapeTowerDefenceLogo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -136,3 +164,5 @@ texture = ExtResource("2_c37k0")
 stretch_mode = 4
 
 [connection signal="pressed" from="VBoxContainer/ButtonStart" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonLevels" to="." method="_on_lebels_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonSettings" to="." method="_on_settings_pressed"]

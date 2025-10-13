@@ -143,3 +143,9 @@ func _on_spawn_5_pressed():
 func _on_spawn_6_pressed():
 	if activated:
 		spawn_ball(balls[3])
+
+func _on_retry_pressed():
+	get_tree().reload_current_scene()
+
+func _on_next_level_pressed():
+	pass # Replace with function body.
