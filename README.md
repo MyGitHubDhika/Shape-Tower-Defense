@@ -3,5 +3,4 @@ This is a simple, BattleCats inspired game about Shape Tower Defense. You are co
 This games is primarily for learning about Godot since it was my first game on this engine.
 
 Current progress: 
-- "Start menu" scene, only the start button is working.
-- "You win" and "You lose" screens/panels.
+- Level 1 is 100% completed (if you don't count the main menu) and its documentation.
