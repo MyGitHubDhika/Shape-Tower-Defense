@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b2244hxyt7fhl"]
+[gd_scene load_steps=26 format=3 uid="uid://b2244hxyt7fhl"]
 
 [ext_resource type="Texture2D" uid="uid://dnnqk3ya8mdb2" path="res://assets/sky.png" id="1_6rwhg"]
 [ext_resource type="Script" path="res://scripts/_level1.gd" id="1_wrtc6"]
@@ -544,6 +544,30 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5r2i"]
+bg_color = Color(0.482353, 0.482353, 0.482353, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77hgy"]
+bg_color = Color(0.396078, 0.396078, 0.396078, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmxt0"]
 bg_color = Color(0.407843, 0, 0.694118, 1)
 border_width_left = 5
@@ -570,6 +594,7 @@ corner_radius_bottom_left = 10
 
 [node name="Node2D" type="Node"]
 script = ExtResource("1_wrtc6")
+time_scale = 3.0
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1152.0
@@ -822,7 +847,7 @@ z_index = 1
 offset_left = 1329.0
 offset_top = 25.0
 offset_right = 1986.0
-offset_bottom = 320.0
+offset_bottom = 398.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_obqe6")
 
 [node name="LabelYouWin" type="Label" parent="PanelYouWin"]
@@ -833,9 +858,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -286.5
-offset_top = -106.5
+offset_top = -144.5
 offset_right = 286.5
-offset_bottom = 58.5
+offset_bottom = 20.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
@@ -856,15 +881,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -65.5
-offset_top = -141.5
+offset_top = -179.5
 offset_right = 57.5
-offset_bottom = -41.5
+offset_bottom = -79.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_tbxd6")
 expand_mode = 1
 
-[node name="ButtonYouWin" type="Button" parent="PanelYouWin"]
+[node name="ButtonNextLevel" type="Button" parent="PanelYouWin"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -872,9 +897,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -190.5
-offset_top = 58.5
+offset_top = 20.5
 offset_right = 191.5
-offset_bottom = 122.5
+offset_bottom = 84.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -885,13 +910,34 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_hfgnv")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hjs6g")
 text = "NEXT LEVEL"
 
+[node name="ButtonYouWinMenu" type="Button" parent="PanelYouWin"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.5
+offset_top = 104.0
+offset_right = 166.5
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_m6uls")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_k5r2i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k5r2i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_77hgy")
+text = "MENU"
+
 [node name="PanelYouLose" type="Panel" parent="."]
 unique_name_in_owner = true
 z_index = 1
 offset_left = 1339.0
-offset_top = 369.0
+offset_top = 450.0
 offset_right = 1996.0
-offset_bottom = 679.0
+offset_bottom = 814.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_obqe6")
 
 [node name="LabelYouLose" type="Label" parent="PanelYouLose"]
@@ -902,9 +948,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -307.5
-offset_top = -121.5
+offset_top = -150.5
 offset_right = 307.5
-offset_bottom = 43.5
+offset_bottom = 14.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.408008, 0.00190097, 0.693421, 1)
@@ -925,15 +971,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 0.5
-offset_top = -145.5
+offset_top = -174.5
 offset_right = 92.5
-offset_bottom = -41.5
+offset_bottom = -70.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_w7dyb")
 expand_mode = 1
 
-[node name="ButtonYouLose" type="Button" parent="PanelYouLose"]
+[node name="ButtonRetry" type="Button" parent="PanelYouLose"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -941,9 +987,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -190.5
-offset_top = 48.5
+offset_top = 19.5
 offset_right = 191.5
-offset_bottom = 112.5
+offset_bottom = 83.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -954,11 +1000,34 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_vmxt0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pcgr5")
 text = "RETRY"
 
+[node name="ButtonYouLoseMenu" type="Button" parent="PanelYouLose"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.5
+offset_top = 105.0
+offset_right = 166.5
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_m6uls")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_k5r2i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k5r2i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_77hgy")
+text = "MENU"
+
 [connection signal="pressed" from="PanelEquipButton/Button1" to="." method="_on_spawn_1_pressed"]
 [connection signal="pressed" from="PanelEquipButton/Button2" to="." method="_on_spawn_2_pressed"]
 [connection signal="pressed" from="PanelEquipButton/Button3" to="." method="_on_spawn_3_pressed"]
 [connection signal="pressed" from="PanelEquipButton/Button4" to="." method="_on_spawn_4_pressed"]
 [connection signal="pressed" from="PanelEquipButton/Button5" to="." method="_on_spawn_5_pressed"]
 [connection signal="pressed" from="PanelEquipButton/Button6" to="." method="_on_spawn_6_pressed"]
-[connection signal="pressed" from="PanelYouWin/ButtonYouWin" to="." method="_on_next_level_pressed"]
-[connection signal="pressed" from="PanelYouLose/ButtonYouLose" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="PanelYouWin/ButtonNextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="PanelYouWin/ButtonYouWinMenu" to="." method="_on_button_you_win_menu_pressed"]
+[connection signal="pressed" from="PanelYouLose/ButtonRetry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="PanelYouLose/ButtonYouLoseMenu" to="." method="_on_button_you_lose_menu_pressed"]

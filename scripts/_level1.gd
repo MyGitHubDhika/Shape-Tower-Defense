@@ -149,3 +149,9 @@ func _on_retry_pressed():
 
 func _on_next_level_pressed():
 	pass # Replace with function body.
+
+func _on_button_you_win_menu_pressed():
+	get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
+
+func _on_button_you_lose_menu_pressed():
+	get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
