@@ -1,19 +1,19 @@
-[gd_scene load_steps=26 format=3 uid="uid://b2244hxyt7fhl"]
+[gd_scene load_steps=26 format=3 uid="uid://52ohdut3gvuv"]
 
-[ext_resource type="Texture2D" uid="uid://dnnqk3ya8mdb2" path="res://assets/sky.png" id="1_6rwhg"]
-[ext_resource type="Script" path="res://scripts/_level1.gd" id="1_wrtc6"]
-[ext_resource type="Texture2D" uid="uid://c3aal6wk7nprg" path="res://assets/_tilesets/tileset.png" id="2_pdssn"]
-[ext_resource type="Texture2D" uid="uid://b3qxxj468tj71" path="res://assets/_icons/two-coins.png" id="4_c4g1m"]
-[ext_resource type="Texture2D" uid="uid://dlr0ai7hep066" path="res://assets/_icons/heart-plus.svg" id="5_fkbe1"]
-[ext_resource type="Texture2D" uid="uid://br1rddrwu6qlb" path="res://assets/_buttons/button_blueBall.png" id="6_q2jcl"]
-[ext_resource type="Texture2D" uid="uid://beepxg72p2fq4" path="res://assets/_buttons/button_yellowBall.png" id="7_veoqk"]
-[ext_resource type="Texture2D" uid="uid://bytbc2wabgxod" path="res://assets/_buttons/button_natureBall.png" id="8_7y72e"]
-[ext_resource type="Texture2D" uid="uid://besqnjxb74g2r" path="res://assets/_icons/crown1.png" id="9_tbxd6"]
-[ext_resource type="Texture2D" uid="uid://cr45b14i7hpgb" path="res://assets/_icons/skull1.png" id="10_w7dyb"]
-[ext_resource type="FontFile" uid="uid://td4u3p8qk0fc" path="res://assets/_fonts/Oswald-VariableFont_wght.ttf" id="11_m6uls"]
+[ext_resource type="Script" path="res://scripts/_level2.gd" id="1_081fb"]
+[ext_resource type="Texture2D" uid="uid://dnnqk3ya8mdb2" path="res://assets/sky.png" id="2_2shna"]
+[ext_resource type="Texture2D" uid="uid://c3aal6wk7nprg" path="res://assets/_tilesets/tileset.png" id="3_say7k"]
+[ext_resource type="Texture2D" uid="uid://b3qxxj468tj71" path="res://assets/_icons/two-coins.png" id="4_ob6ng"]
+[ext_resource type="Texture2D" uid="uid://dlr0ai7hep066" path="res://assets/_icons/heart-plus.svg" id="5_0x05d"]
+[ext_resource type="Texture2D" uid="uid://br1rddrwu6qlb" path="res://assets/_buttons/button_blueBall.png" id="6_ay5te"]
+[ext_resource type="Texture2D" uid="uid://beepxg72p2fq4" path="res://assets/_buttons/button_yellowBall.png" id="7_oxv8i"]
+[ext_resource type="Texture2D" uid="uid://bytbc2wabgxod" path="res://assets/_buttons/button_natureBall.png" id="8_pv60v"]
+[ext_resource type="Texture2D" uid="uid://besqnjxb74g2r" path="res://assets/_icons/crown1.png" id="9_4bgnp"]
+[ext_resource type="FontFile" uid="uid://td4u3p8qk0fc" path="res://assets/_fonts/Oswald-VariableFont_wght.ttf" id="10_541in"]
+[ext_resource type="Texture2D" uid="uid://cr45b14i7hpgb" path="res://assets/_icons/skull1.png" id="11_kbosb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h6671"]
-texture = ExtResource("2_pdssn")
+texture = ExtResource("3_say7k")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -593,14 +593,14 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="Node2D" type="Node"]
-script = ExtResource("1_wrtc6")
+script = ExtResource("1_081fb")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
 size_flags_horizontal = 8
 size_flags_vertical = 0
-texture = ExtResource("1_6rwhg")
+texture = ExtResource("2_2shna")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -632,7 +632,7 @@ offset_top = -28.5
 offset_right = 68.0
 offset_bottom = 28.5
 grow_vertical = 2
-texture = ExtResource("4_c4g1m")
+texture = ExtResource("4_ob6ng")
 expand_mode = 1
 
 [node name="LabelCoins" type="Label" parent="PanelCoins"]
@@ -680,7 +680,7 @@ offset_top = -20.5
 offset_right = 54.0
 offset_bottom = 20.5
 grow_vertical = 2
-texture = ExtResource("5_fkbe1")
+texture = ExtResource("5_0x05d")
 expand_mode = 1
 
 [node name="LabelBaseHealth" type="Label" parent="PanelBaseHealth"]
@@ -728,7 +728,7 @@ offset_top = -20.5
 offset_right = 54.0
 offset_bottom = 20.5
 grow_vertical = 2
-texture = ExtResource("5_fkbe1")
+texture = ExtResource("5_0x05d")
 expand_mode = 1
 
 [node name="LabelEnemyHealth" type="Label" parent="PanelEnemyHealth"]
@@ -777,7 +777,7 @@ offset_top = -38.5
 offset_right = 82.0
 offset_bottom = 38.5
 grow_vertical = 2
-icon = ExtResource("6_q2jcl")
+icon = ExtResource("6_ay5te")
 expand_icon = true
 
 [node name="Button2" type="Button" parent="PanelEquipButton"]
@@ -790,7 +790,7 @@ offset_top = -38.5
 offset_right = 171.0
 offset_bottom = 38.5
 grow_vertical = 2
-icon = ExtResource("7_veoqk")
+icon = ExtResource("7_oxv8i")
 expand_icon = true
 
 [node name="Button3" type="Button" parent="PanelEquipButton"]
@@ -803,7 +803,7 @@ offset_top = -38.5
 offset_right = 261.0
 offset_bottom = 38.5
 grow_vertical = 2
-icon = ExtResource("8_7y72e")
+icon = ExtResource("8_pv60v")
 expand_icon = true
 
 [node name="Button4" type="Button" parent="PanelEquipButton"]
@@ -884,7 +884,7 @@ offset_right = 57.5
 offset_bottom = -79.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("9_tbxd6")
+texture = ExtResource("9_4bgnp")
 expand_mode = 1
 
 [node name="ButtonNextLevel" type="Button" parent="PanelYouWin"]
@@ -901,7 +901,7 @@ offset_bottom = 84.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("11_m6uls")
+theme_override_fonts/font = ExtResource("10_541in")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_hfgnv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hfgnv")
@@ -922,7 +922,7 @@ offset_bottom = 168.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("11_m6uls")
+theme_override_fonts/font = ExtResource("10_541in")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_k5r2i")
 theme_override_styles/hover = SubResource("StyleBoxFlat_k5r2i")
@@ -974,7 +974,7 @@ offset_right = 92.5
 offset_bottom = -70.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_w7dyb")
+texture = ExtResource("11_kbosb")
 expand_mode = 1
 
 [node name="ButtonRetry" type="Button" parent="PanelYouLose"]
@@ -991,7 +991,7 @@ offset_bottom = 83.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("11_m6uls")
+theme_override_fonts/font = ExtResource("10_541in")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_vmxt0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vmxt0")
@@ -1012,7 +1012,7 @@ offset_bottom = 169.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("11_m6uls")
+theme_override_fonts/font = ExtResource("10_541in")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_k5r2i")
 theme_override_styles/hover = SubResource("StyleBoxFlat_k5r2i")

@@ -27,11 +27,12 @@ func _ready():
 	balls[2] = ball_nature
 	
 	# spawn the squares
-	spawn_square(square_red, 0.0, 2.0, 15)
-	spawn_square(square_thunder, 4.0, 0.2, 4)
-	spawn_square(square_thunder, 20.0, 0.2, 4)
-	spawn_square(square_rock, 6.0)
-	spawn_square(square_rock, 22.0)
+	spawn_square(square_thunder, 4.0, 1, 40)
+	spawn_square(square_rock, 2.0)
+	spawn_square(square_rock, 10.0)
+	spawn_square(square_rock, 18.0)
+	spawn_square(square_rock, 26.0)
+	spawn_square(square_rock, 34.0)
 	
 	add_coins()
 
@@ -148,7 +149,7 @@ func _on_retry_pressed():
 	get_tree().reload_current_scene()
 
 func _on_next_level_pressed():
-	get_tree().change_scene_to_file("res://scenes/level2.tscn")
+	pass
 
 func _on_button_you_win_menu_pressed():
 	get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
