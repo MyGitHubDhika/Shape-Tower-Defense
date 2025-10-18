@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://mpswj06v8fix"]
+[gd_scene load_steps=15 format=3 uid="uid://mpswj06v8fix"]
 
 [ext_resource type="Texture2D" uid="uid://dnnqk3ya8mdb2" path="res://assets/sky.png" id="1_a3053"]
 [ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_upngi"]
@@ -20,6 +20,22 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_waarw"]
+bg_color = Color(0.25407, 0.770725, 7.70092e-07, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1.14311e-06, 0.385644, 0.0663111, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwih1"]
 bg_color = Color(0.202503, 0.632958, 0, 1)
 border_width_left = 5
@@ -31,6 +47,10 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua62t"]
 bg_color = Color(8.66354e-06, 0.652908, 0.87978, 1)
@@ -44,6 +64,22 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my4hj"]
+bg_color = Color(8.66354e-06, 0.652908, 0.87978, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(5.29438e-07, 0.331324, 0.460242, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvjvp"]
 bg_color = Color(6.16074e-06, 0.537854, 0.727854, 1)
 border_width_left = 5
@@ -55,6 +91,10 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8at5x"]
 bg_color = Color(0.481789, 0.48179, 0.481789, 1)
@@ -68,6 +108,22 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ub8ml"]
+bg_color = Color(0.481789, 0.48179, 0.481789, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.273873, 0.273873, 0.273873, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tr7ux"]
 bg_color = Color(0.396888, 0.39689, 0.396888, 1)
 border_width_left = 5
@@ -79,6 +135,10 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -99,7 +159,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_it3a5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Menus" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -114,35 +174,38 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="ButtonStart" type="Button" parent="VBoxContainer"]
+[node name="ButtonStart" type="Button" parent="Menus"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_u6m1a")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_u2x0k")
-theme_override_styles/hover = SubResource("StyleBoxFlat_u2x0k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_waarw")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xwih1")
 text = "START"
 
-[node name="ButtonLevels" type="Button" parent="VBoxContainer"]
+[node name="ButtonLevels" type="Button" parent="Menus"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_u6m1a")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_ua62t")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ua62t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_my4hj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_tvjvp")
 text = "LEVELS"
 
-[node name="ButtonSettings" type="Button" parent="VBoxContainer"]
+[node name="ButtonSettings" type="Button" parent="Menus"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_u6m1a")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_8at5x")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8at5x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ub8ml")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_tr7ux")
 text = "SETTINGS
 "
@@ -163,6 +226,6 @@ grow_vertical = 2
 texture = ExtResource("2_c37k0")
 stretch_mode = 4
 
-[connection signal="pressed" from="VBoxContainer/ButtonStart" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonLevels" to="." method="_on_lebels_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonSettings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menus/ButtonStart" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menus/ButtonLevels" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="Menus/ButtonSettings" to="." method="_on_settings_pressed"]
