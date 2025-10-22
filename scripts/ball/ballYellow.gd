@@ -1,5 +1,8 @@
 extends Ball
 
+func _init():
+	price = 60.0
+
 func _ready():
 	add_to_group("ball")
 	
@@ -7,6 +10,5 @@ func _ready():
 	
 	speed = ball_blue_speed * (100.0 / 50.0)
 	health = 50.0
-	price = 60.0
 	
 	deduct_coins()

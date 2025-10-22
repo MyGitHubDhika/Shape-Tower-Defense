@@ -12,6 +12,8 @@ const square_rock = preload("res://scenes/square/squareRock.tscn")
 # to make it easier to organize and to spawn a ball
 var balls = []
 
+var label_buttons = []
+
 var activated := true # if the game is allowed to run
 @export var time_scale := 1.0 # time multiplier
 
@@ -26,6 +28,8 @@ func _ready():
 	balls[1] = ball_yellow
 	balls[2] = ball_nature
 	
+	label_buttons = [label_button_1, label_button_2, label_button_3, label_button_4, label_button_5, label_button_6]
+	
 	# spawn the squares
 	spawn_square(square_red, 0.0, 2.0, 15)
 	spawn_square(square_thunder, 4.0, 0.2, 4)
@@ -34,6 +38,7 @@ func _ready():
 	spawn_square(square_rock, 22.0)
 	
 	add_coins()
+	display_price()
 
 # set the value of labels
 @onready var label_coins = %LabelCoins
@@ -50,6 +55,14 @@ func _ready():
 
 @export var base_health := 500
 @export var enemy_base_health := 500
+
+@onready var label_button_1 = %LabelButton1
+@onready var label_button_2 = %LabelButton2
+@onready var label_button_3 = %LabelButton3
+@onready var label_button_4 = %LabelButton4
+@onready var label_button_5 = %LabelButton5
+@onready var label_button_6 = %LabelButton6
+
 func _process(_delta):
 	
 	# Keybinds to spawn a ball
@@ -123,6 +136,11 @@ func add_coins(): # updates coins value by a small amount
 			
 		await get_tree().create_timer(0.05).timeout
 		coins += 2
+		
+func display_price():
+	for i in range(len(balls)):
+		if balls[i] != null:
+			label_buttons[i].text = "$" + str(balls[i].instantiate().price)
 
 # 6 button GUI to spawn a ball
 func _on_spawn_1_pressed():
@@ -148,10 +166,10 @@ func _on_retry_pressed():
 	get_tree().reload_current_scene()
 
 func _on_next_level_pressed():
-	get_tree().change_scene_to_file("res://scenes/level2.tscn")
+	get_tree().change_scene_to_file("res://scenes/_levels/level2.tscn")
 
 func _on_button_you_win_menu_pressed():
-	get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/_menus/start_menu.tscn")
 
 func _on_button_you_lose_menu_pressed():
-	get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/_menus/start_menu.tscn")
