@@ -31,9 +31,8 @@ func _ready():
 	label_buttons = [label_button_1, label_button_2, label_button_3, label_button_4, label_button_5, label_button_6]
 	
 	# spawn the squares
-	spawn_square(square_thunder, 4.0, 1, 40)
-	spawn_square(square_rock, 4.0, 11.0, 3)
-
+	spawn_square(square_red, 0.0, 0.5, 10)
+	
 	add_coins()
 	display_price()
 
@@ -163,7 +162,7 @@ func _on_retry_pressed():
 	get_tree().reload_current_scene()
 
 func _on_next_level_pressed():
-	get_tree().change_scene_to_file("res://scenes/_levels/level3.tscn")
+	pass
 
 func _on_button_you_win_menu_pressed():
 	get_tree().change_scene_to_file("res://scenes/_menus/start_menu.tscn")
