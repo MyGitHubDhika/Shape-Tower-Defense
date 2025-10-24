@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b2244hxyt7fhl"]
+[gd_scene load_steps=32 format=3 uid="uid://b2244hxyt7fhl"]
 
 [ext_resource type="Script" path="res://scripts/_level1.gd" id="1_ra2ld"]
 [ext_resource type="Texture2D" uid="uid://dnnqk3ya8mdb2" path="res://assets/sky.png" id="2_phr24"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://besqnjxb74g2r" path="res://assets/_icons/crown1.png" id="9_r1qr4"]
 [ext_resource type="FontFile" uid="uid://td4u3p8qk0fc" path="res://assets/_fonts/Oswald-VariableFont_wght.ttf" id="10_5orf1"]
 [ext_resource type="Texture2D" uid="uid://cr45b14i7hpgb" path="res://assets/_icons/skull1.png" id="11_36fki"]
+[ext_resource type="Texture2D" uid="uid://b0r5hecraksux" path="res://assets/_icons/button-restart.png" id="12_x5uay"]
+[ext_resource type="Texture2D" uid="uid://dlga4ys2m456g" path="res://assets/_icons/button-home.png" id="13_uovq1"]
+[ext_resource type="Texture2D" uid="uid://dx0lb7fwp66qr" path="res://assets/_icons/button-speedup.png" id="14_skr4x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h6671"]
 texture = ExtResource("3_6jokd")
@@ -592,6 +595,30 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ffqr"]
+bg_color = Color(0.860369, 0.860369, 0.860369, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hajs"]
+bg_color = Color(0, 0.727855, 0.0824904, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7804"]
+bg_color = Color(0.903768, 0.098678, 0.107273, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+
 [node name="Node2D" type="Node"]
 script = ExtResource("1_ra2ld")
 
@@ -1103,7 +1130,7 @@ grow_vertical = 2
 texture = ExtResource("11_36fki")
 expand_mode = 1
 
-[node name="ButtonRetry" type="Button" parent="PanelYouLose"]
+[node name="ButtonRestart" type="Button" parent="PanelYouLose"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1145,13 +1172,92 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_k5r2i")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_77hgy")
 text = "MENU"
 
+[node name="PanelMenus" type="VBoxContainer" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -127.5
+offset_right = 74.0
+offset_bottom = 127.5
+grow_vertical = 2
+
+[node name="ButtonRestart" type="Button" parent="PanelMenus"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_5ffqr")
+
+[node name="TextureRectRestart" type="TextureRect" parent="PanelMenus/ButtonRestart"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_x5uay")
+expand_mode = 1
+
+[node name="ButtonHome" type="Button" parent="PanelMenus"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_5ffqr")
+
+[node name="TextureRectHome" type="TextureRect" parent="PanelMenus/ButtonHome"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_uovq1")
+expand_mode = 1
+
+[node name="ButtonSpeedup" type="Button" parent="PanelMenus"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hajs")
+
+[node name="TextureRectSpeedUp" type="TextureRect" parent="PanelMenus/ButtonSpeedup"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_skr4x")
+expand_mode = 1
+
+[node name="ButtonSpeeddown" type="Button" parent="PanelMenus"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_j7804")
+
+[node name="TextureRectSpeedDown" type="TextureRect" parent="PanelMenus/ButtonSpeeddown"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_skr4x")
+expand_mode = 1
+flip_h = true
+
 [connection signal="pressed" from="PanelEquipButton/Button1" to="." method="_on_spawn_1_pressed"]
 [connection signal="pressed" from="PanelEquipButton/Button2" to="." method="_on_spawn_2_pressed"]
 [connection signal="pressed" from="PanelEquipButton/Button3" to="." method="_on_spawn_3_pressed"]
 [connection signal="pressed" from="PanelEquipButton/Button4" to="." method="_on_spawn_4_pressed"]
 [connection signal="pressed" from="PanelEquipButton/Button5" to="." method="_on_spawn_5_pressed"]
 [connection signal="pressed" from="PanelEquipButton/Button6" to="." method="_on_spawn_6_pressed"]
-[connection signal="pressed" from="PanelYouWin/ButtonNextLevel" to="." method="_on_next_level_pressed"]
-[connection signal="pressed" from="PanelYouWin/ButtonYouWinMenu" to="." method="_on_button_you_win_menu_pressed"]
-[connection signal="pressed" from="PanelYouLose/ButtonRetry" to="." method="_on_retry_pressed"]
-[connection signal="pressed" from="PanelYouLose/ButtonYouLoseMenu" to="." method="_on_button_you_lose_menu_pressed"]
+[connection signal="pressed" from="PanelYouWin/ButtonNextLevel" to="." method="_on_you_win_next_level_pressed"]
+[connection signal="pressed" from="PanelYouWin/ButtonYouWinMenu" to="." method="_on_you_win_menu_pressed"]
+[connection signal="pressed" from="PanelYouLose/ButtonRestart" to="." method="_on_you_lose_restart_pressed"]
+[connection signal="pressed" from="PanelYouLose/ButtonYouLoseMenu" to="." method="_on_you_lose_menu_pressed"]
+[connection signal="pressed" from="PanelMenus/ButtonRestart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelMenus/ButtonHome" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="PanelMenus/ButtonSpeedup" to="." method="_on_speedup_pressed"]
+[connection signal="pressed" from="PanelMenus/ButtonSpeeddown" to="." method="_on_speeddown_pressed"]

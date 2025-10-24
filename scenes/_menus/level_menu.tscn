@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/level_menu.gd" id="1_0uvqt"]
 [ext_resource type="Texture2D" uid="uid://dnnqk3ya8mdb2" path="res://assets/sky.png" id="2_ll0dm"]
 [ext_resource type="FontFile" uid="uid://td4u3p8qk0fc" path="res://assets/_fonts/Oswald-VariableFont_wght.ttf" id="3_j71jg"]
-[ext_resource type="Texture2D" uid="uid://dorvu4fqw8758" path="res://assets/button-close.png" id="4_g3rba"]
+[ext_resource type="Texture2D" uid="uid://bld2uboigyi7a" path="res://assets/_icons/button-close.png" id="4_plhms"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u88wa"]
 texture = ExtResource("2_ll0dm")
@@ -140,23 +140,23 @@ expand_margin_top = 8.0
 expand_margin_right = 8.0
 expand_margin_bottom = 8.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_msaj3"]
-texture = ExtResource("4_g3rba")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4357x"]
+texture = ExtResource("4_plhms")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f8hk0"]
-texture = ExtResource("4_g3rba")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rgx5y"]
+texture = ExtResource("4_plhms")
 expand_margin_left = 4.0
 expand_margin_top = 4.0
 expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_txoqt"]
-texture = ExtResource("4_g3rba")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xcpjl"]
+texture = ExtResource("4_plhms")
 expand_margin_left = 4.0
 expand_margin_top = 4.0
 expand_margin_right = 4.0
 expand_margin_bottom = 4.0
-modulate_color = Color(0.617455, 0.617455, 0.617455, 1)
+modulate_color = Color(0.641934, 0.641934, 0.641934, 1)
 
 [node name="LevelsMenu" type="Control"]
 layout_mode = 3
@@ -404,9 +404,9 @@ offset_top = 22.0
 offset_right = -22.0
 offset_bottom = 92.0
 grow_horizontal = 0
-theme_override_styles/normal = SubResource("StyleBoxTexture_msaj3")
-theme_override_styles/hover = SubResource("StyleBoxTexture_f8hk0")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_txoqt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4357x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rgx5y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xcpjl")
 
 [connection signal="pressed" from="Rows/Column1/Button1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Rows/Column2/Button2" to="." method="_on_level_2_pressed"]

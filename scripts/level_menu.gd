@@ -12,10 +12,10 @@ func _on_level_1_pressed():
 	get_tree().change_scene_to_file("res://scenes/_levels/level1.tscn")
 
 func _on_level_2_pressed():
-	get_tree().change_scene_to_file("res://scenes/_levels/level2.tscn")
+	pass
 	
 func _on_level_3_pressed():
-	get_tree().change_scene_to_file("res://scenes/_levels/level3.tscn")
+	pass
 
 func _on_close_pressed():
 	get_tree().change_scene_to_file("res://scenes/_menus/start_menu.tscn")

@@ -9,17 +9,13 @@ const square_red = preload("res://scenes/square/squareRed.tscn")
 const square_thunder = preload("res://scenes/square/squareThunder.tscn")
 const square_rock = preload("res://scenes/square/squareRock.tscn")
 
-# to make it easier to organize and to spawn a ball
+# balls and price displays organizer
 var balls = []
+var price_displays = []
 
-var label_buttons = []
-
-var activated := true # if the game is allowed to run
-@export var time_scale := 1.0 # time multiplier
+var activated := true # the game is allowed to run or paused
 
 func _ready():
-	Engine.time_scale = time_scale # set the time multiplier
-	
 	add_to_group("level")
 	
 	balls.resize(6)
@@ -28,7 +24,7 @@ func _ready():
 	balls[1] = ball_yellow
 	balls[2] = ball_nature
 	
-	label_buttons = [label_button_1, label_button_2, label_button_3, label_button_4, label_button_5, label_button_6]
+	price_displays = [price_display_1, price_display_2, price_display_3, price_display_4, price_display_5]
 	
 	# spawn the squares
 	spawn_square(square_red, 0.0, 2.0, 15)
@@ -40,32 +36,34 @@ func _ready():
 	add_coins()
 	display_price()
 
-# set the value of labels
+# get the labels
 @onready var label_coins = %LabelCoins
 @onready var label_base_health = %LabelBaseHealth
 @onready var label_enemy_health = %LabelEnemyHealth
 
-# PanelYouWin and PanelYouLose pop-up
+# get the pop-up panels.
 @onready var panel_you_win = %PanelYouWin
 @onready var panel_you_lose = %PanelYouLose
 
-# screen width and height
+# get the screen width and height
 @onready var screen_width = get_viewport().size.x
 @onready var screen_height = get_viewport().size.y
 
+# set the base health and enemy base health
 @export var base_health := 500
 @export var enemy_base_health := 500
 
-@onready var label_button_1 = %LabelButton1
-@onready var label_button_2 = %LabelButton2
-@onready var label_button_3 = %LabelButton3
-@onready var label_button_4 = %LabelButton4
-@onready var label_button_5 = %LabelButton5
-@onready var label_button_6 = %LabelButton6
+# get the price display labels
+@onready var price_display_1 = %LabelButton1
+@onready var price_display_2 = %LabelButton2
+@onready var price_display_3 = %LabelButton3
+@onready var price_display_4 = %LabelButton4
+@onready var price_display_5 = %LabelButton5
+@onready var price_display_6 = %LabelButton6
 
 func _process(_delta):
 	
-	# Keybinds to spawn a ball
+	# Keybinds (1 to 6) to spawn a ball
 	if activated:
 		if Input.is_action_just_pressed("spawn_ball_1"):
 			spawn_ball(balls[0])
@@ -85,11 +83,11 @@ func _process(_delta):
 		if Input.is_action_just_pressed("spawn_ball_6"):
 			spawn_ball(balls[5])
 		
-	label_coins.text = "Coins: " + str(coins) # updates coins value
-	label_base_health.text = "Base Health: " + str(base_health) # updates base health
-	label_enemy_health.text = "Enemy Health: " + str(enemy_base_health) # updates enemy health
+	label_coins.text = "Coins: " + str(coins) # set the coins' label to the updated valye
+	label_base_health.text = "Base Health: " + str(base_health) # set the base health's label to the updated value
+	label_enemy_health.text = "Enemy Health: " + str(enemy_base_health) # set the enemy base health's label to the updated value
 	
-	if base_health <= 0: # if the base is destroyed (losing)
+	if base_health <= 0: # if the base is destroyed, aka LOSING
 		label_base_health.text = "Base Health: 0"
 		
 		# pop-ups PanelYouLose to the center of the screen
@@ -97,9 +95,11 @@ func _process(_delta):
 		var panel_you_lose_height = panel_you_lose.size.y / 2
 		panel_you_lose.position = Vector2((screen_width / 2) - panel_you_lose_width, (screen_height / 2) - panel_you_lose_height)
 		
-		activated = false
+		activated = false # pause the game
+		time_scale = 1
+		Engine.time_scale = 1
 	
-	if enemy_base_health <= 0: # if the enemy's base is destroyed (winning)
+	if enemy_base_health <= 0: # if the enemy's base is destroyed, aka WINNING
 		label_enemy_health.text = "Enemy Health: 0"
 		
 		# pop-ups PanelYouWin to the center of the screen
@@ -107,7 +107,9 @@ func _process(_delta):
 		var panel_you_win_height = panel_you_win.size.y / 2
 		panel_you_win.position = Vector2((screen_width / 2) - panel_you_win_width, (screen_height / 2) - panel_you_win_height)
 		
-		activated = false
+		activated = false # pause the game
+		time_scale = 1
+		Engine.time_scale = 1
 
 # spawn a ball
 func spawn_ball(unit_scene) -> void:
@@ -116,7 +118,7 @@ func spawn_ball(unit_scene) -> void:
 		add_child(ball)
 		ball.position = Vector2(1040.0, 330.0)
 
-# spawn a group of squares based on interval and amount
+# spawn a group of squares based on delays and amount
 func spawn_square(square_scene, start_delay = 0.0, delay = 0.0, max_spawn = 1) -> void:
 	await get_tree().create_timer(start_delay).timeout
 	
@@ -126,7 +128,7 @@ func spawn_square(square_scene, start_delay = 0.0, delay = 0.0, max_spawn = 1) -
 			add_child(square)
 			square.position = Vector2(125.0, 330.0)
 			
-			await get_tree().create_timer(delay).timeout
+			await get_tree().create_timer(delay).timeout # delay
 		
 var coins := 0
 func add_coins(): # updates coins value by a small amount
@@ -137,12 +139,12 @@ func add_coins(): # updates coins value by a small amount
 		await get_tree().create_timer(0.05).timeout
 		coins += 2
 		
-func display_price():
+func display_price(): # displays the balls' price
 	for i in range(len(balls)):
 		if balls[i] != null:
-			label_buttons[i].text = "$" + str(balls[i].instantiate().price)
+			price_displays[i].text = "$" + str(balls[i].instantiate().price)
 
-# 6 button GUI to spawn a ball
+# button GUIs to spawn the balls
 func _on_spawn_1_pressed():
 	if activated:
 		spawn_ball(balls[0])
@@ -162,14 +164,38 @@ func _on_spawn_6_pressed():
 	if activated:
 		spawn_ball(balls[3])
 
-func _on_retry_pressed():
+# button GUI to retry/reload the level
+func _on_you_lose_restart_pressed():
+	restart_level()
+# button GUI to go to the next level
+func _on_you_win_next_level_pressed():
+	pass
+
+# button GUI to go back to start_menu
+func _on_you_win_menu_pressed():
+	go_to_start_menu()
+# button GUI to go back to start_menu
+func _on_you_lose_menu_pressed():
+	go_to_start_menu()
+	
+func _on_restart_pressed():
+	if activated:
+		restart_level()
+func _on_home_pressed():
+	if activated:
+		go_to_start_menu()
+
+func go_to_start_menu():
+	get_tree().change_scene_to_file("res://scenes/_menus/start_menu.tscn")
+func restart_level():
 	get_tree().reload_current_scene()
 
-func _on_next_level_pressed():
-	get_tree().change_scene_to_file("res://scenes/_levels/level2.tscn")
-
-func _on_button_you_win_menu_pressed():
-	get_tree().change_scene_to_file("res://scenes/_menus/start_menu.tscn")
-
-func _on_button_you_lose_menu_pressed():
-	get_tree().change_scene_to_file("res://scenes/_menus/start_menu.tscn")
+var time_scale = 1
+func _on_speedup_pressed():
+	if activated:
+		time_scale += 1
+		Engine.time_scale = time_scale
+func _on_speeddown_pressed():
+	if activated and time_scale != 0:
+		time_scale -= 1
+		Engine.time_scale = time_scale
